@@ -91,3 +91,4 @@ kubectl port-forward service/mongodb-exporter-prometheus-mongodb-exporter 9216
 localhost:9216 #mongodb_exporter metrics
 localhost:9090 #prometheus server
 localhost:3000 #grafana dashboard
+localhost:9030 #alert manager

@@ -1,0 +1,18 @@
+apiVersion: monitoring.coreos.com/v1alpha1
+kind: AlertmanagerConfig
+metadata:
+  name: alert-config
+  labels:
+    release: prometheus
+spec:
+  route:
+    groupBy: ["severity"]
+    groupWait: 10s
+    groupInterval: 5m
+    repeatInterval: 30m
+    receiver: "webhook"
+  receivers:
+  - name: "webhook"
+    webhookConfigs:
+    - url: "http://example.com/"
+
